@@ -1,7 +1,7 @@
 kind: CronJob
 apiVersion: batch/v1beta1
 metadata:
-  name: auto-approve-csr
+  name: ocp4-auto-approve-csr
   namespace: openshift-cron-jobs
 spec:
   schedule: '@hourly'
@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: openshift-client
-              image: 'quay.io/vchintal/auto-approve-csr:4.1.18'
+              image: 'quay.io/vchintal/ocp4-auto-approve-csr:4.1.18'
               args:
                 - /bin/sh
                 - '-c'
